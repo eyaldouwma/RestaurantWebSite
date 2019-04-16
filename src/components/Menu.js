@@ -115,7 +115,37 @@ class Menu extends React.Component {
     }
 
     getDesserts() {
-        
+        let desserts = [];
+
+        let item = {
+            img: 'http://pngimg.com/uploads/waffle/waffle_PNG74.png',
+            text: 'Belgian Waffle'
+        }
+
+        desserts.push(item);
+
+        item = {
+            img: 'http://pngimg.com/uploads/croissant/croissant_PNG46697.png',
+            text: 'Chocolate Croissant'
+        }
+
+        desserts.push(item);
+
+        item = {
+            img: 'http://pngimg.com/uploads/ice_cream/ice_cream_PNG20987.png',
+            text: 'Strawberry Ice Cream'
+        }
+
+        desserts.push(item);
+
+        item = {
+            img: 'http://pngimg.com/uploads/donut/donut_PNG96.png',
+            text: 'Dunkin Donut'
+        }
+
+        desserts.push(item);
+
+        this.setState({menuItems: desserts, active:[false,false,true]});
     }
 
     render() {
