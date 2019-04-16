@@ -1,0 +1,47 @@
+.container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.title-home {
+    font-size: 40px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    color: white;
+    position: absolute;
+    z-index: 10000;
+    left: 35%;
+    top: 50%;
+    border: 2px solid white;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.slider-container {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+}
+
+.slider {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+}
+
+.slider div {
+    outline: none;
+
+}
+
+div > img {
+    width: 100%;
+    height: 100%;
+    background-size:contain;
+}
+

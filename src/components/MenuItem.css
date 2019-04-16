@@ -1,0 +1,28 @@
+.menu-item-container {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 300px;
+    margin: 10px;
+}
+
+.menu-item-container:hover {
+    cursor: pointer;
+}
+
+.image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
