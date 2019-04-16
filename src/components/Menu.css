@@ -4,6 +4,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
+    top: 0;
     background-color: whitesmoke;
 }
 
@@ -68,6 +69,41 @@
     transition-property: width;
     transition-duration: 0.3s;
 
+}
+
+.modal {
+    width: 100%;
+    height: calc(100% + 100px);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal:hover {
+    cursor: pointer;
+}
+
+.modal-content {
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    border-radius: 4px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10000;
+
+}
+
+.modal-content:hover {
+    cursor: text;
 }
 
 .menu-categories:hover::after {

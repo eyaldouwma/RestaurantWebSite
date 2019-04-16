@@ -10,7 +10,7 @@ class MenuItem extends React.Component {
             <div className='menu-item-container'>
                 <div className="image" style={{
                     backgroundImage: "url(" + Background + ")"
-                }}/>
+                }} onClick={() => this.props.myFunction(this.props.image)}/>
                 <div className="image-text">
                     {this.props.description}
                 </div>

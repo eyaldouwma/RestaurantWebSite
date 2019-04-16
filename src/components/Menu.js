@@ -11,11 +11,16 @@ class Menu extends React.Component {
         this.getStarters = this.getStarters.bind(this);
         this.getMains = this.getMains.bind(this);
         this.getDesserts = this.getDesserts.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.stamm = this.stamm.bind(this);
     }
 
     state = {
         menuItems: [],
-        active: [true,false,false]
+        active: [true,false,false],
+        modalVisible: false,
+        imgLink: ''
     }
 
     componentDidMount() {
@@ -148,16 +153,37 @@ class Menu extends React.Component {
         this.setState({menuItems: desserts, active:[false,false,true]});
     }
 
+    closeModal() {
+        this.setState({modalVisible: false});
+    }
+
+    openModal(img) {
+        
+        this.setState({imgLink: img, modalVisible: true});
+    }
+
+    stamm(event) {
+        event.stopPropagation();
+
+        alert('yalla cool');
+    }
+
     render() {
 
         let renderMenuItems = this.state.menuItems.map((item,key) => {
             return (
-             <MenuItem image={item.img} description={item.text}/>
+             <MenuItem image={item.img} description={item.text} myFunction={this.openModal}/>
             )
         })
+
+        let Background = this.state.modalVisible ? this.state.imgLink : ''
         return (
             <div className='menu-container'>
                 <Header />
+                <div className='modal' style={this.state.modalVisible ? {visibility: 'visible'} : {visibility: 'hidden'}} onClick={this.closeModal}>
+                    <div className='modal-content'style={this.state.modalVisible ? {backgroundImage: "url(" + Background + ")"} : {}} onClick={event => event.stopPropagation()}>
+                    </div>
+                </div>
                 <div className='menu-grid'>
                     <div className='menu-side'>
                         <span className={this.state.active[0] ? "active" : "menu-categories"} onClick={this.getStarters}>Starters</span>
