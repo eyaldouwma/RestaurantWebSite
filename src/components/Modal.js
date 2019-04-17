@@ -3,7 +3,7 @@ import './Modal.css';
 
 const Modal = (props) => {
     return (
-        <div className={props.visible ? 'modal active' : 'modal'} onClick={props.myFunction}>
+        <div className={props.visible ? 'modal active' : 'modal'} onClick={props.onGreyArea}>
             {props.children}
         </div>
     )

@@ -174,7 +174,7 @@ class Menu extends React.Component {
         return (
             <div className='menu-container'>
                 <Header />
-                <Modal visible={this.state.modalVisible} myFunction={this.closeModal}>
+                <Modal visible={this.state.modalVisible} onGreyArea={this.closeModal}>
                     <div className='modal-content'style={this.state.modalVisible ? {backgroundImage: "url(" + Background + ")"} : {}} onClick={event => event.stopPropagation()}/>
                 </Modal>
                 <div className='menu-grid'>
