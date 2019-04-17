@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import MenuItem from './MenuItem';
+import Modal from './Modal';
 
 import './Menu.css'
 
@@ -13,7 +14,6 @@ class Menu extends React.Component {
         this.getDesserts = this.getDesserts.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.openModal = this.openModal.bind(this);
-        this.stamm = this.stamm.bind(this);
     }
 
     state = {
@@ -162,12 +162,6 @@ class Menu extends React.Component {
         this.setState({imgLink: img, modalVisible: true});
     }
 
-    stamm(event) {
-        event.stopPropagation();
-
-        alert('yalla cool');
-    }
-
     render() {
 
         let renderMenuItems = this.state.menuItems.map((item,key) => {
@@ -180,10 +174,9 @@ class Menu extends React.Component {
         return (
             <div className='menu-container'>
                 <Header />
-                <div className='modal' style={this.state.modalVisible ? {visibility: 'visible'} : {visibility: 'hidden'}} onClick={this.closeModal}>
-                    <div className='modal-content'style={this.state.modalVisible ? {backgroundImage: "url(" + Background + ")"} : {}} onClick={event => event.stopPropagation()}>
-                    </div>
-                </div>
+                <Modal visible={this.state.modalVisible} myFunction={this.closeModal}>
+                    <div className='modal-content'style={this.state.modalVisible ? {backgroundImage: "url(" + Background + ")"} : {}} onClick={event => event.stopPropagation()}/>
+                </Modal>
                 <div className='menu-grid'>
                     <div className='menu-side'>
                         <span className={this.state.active[0] ? "active" : "menu-categories"} onClick={this.getStarters}>Starters</span>

@@ -71,7 +71,9 @@
 
 }
 
-.modal {
+/* .modal {
+    opacity: 0;
+    visibility: hidden;
     width: 100%;
     height: calc(100% + 100px);
     margin: 0;
@@ -84,11 +86,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-property: opacity visibility;
+    transition-duration: 0.2s;
 }
 
-.modal:hover {
-    cursor: pointer;
-}
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s
+} */
 
 .modal-content {
     width: 500px;
