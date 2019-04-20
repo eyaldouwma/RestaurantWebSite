@@ -19,12 +19,12 @@ const Header = () => {
                         Menu
                         <ui className="dropdown">
                             <li><Link to='/menu' className='link'>Menu</Link></li>
-                            <li><Link to='/express-menu' className='link'>Express Menu</Link></li>
+                            <li><Link to='/menu' className='link'>Express Menu</Link></li>
                         </ui>
                     </li>
                     <li>Branches</li>
                     <li>Events</li>
-                    <li>Contact</li>
+                    <li><Link to='/contact' className='link'>Contact</Link></li>
                     <li>Order</li>
                 </ui>
             </div>
